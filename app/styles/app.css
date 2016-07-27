@@ -16,3 +16,13 @@ html {
 .selected {
   background: pink;
 }
+
+.poster {
+  display: inline-block;
+  width: 10%;
+}
+
+.movie-info {
+  display: inline-block;
+  width: 80%;
+}

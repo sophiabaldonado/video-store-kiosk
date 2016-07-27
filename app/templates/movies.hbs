@@ -1,6 +1,13 @@
-<div {{action "toggleBody"}}class="movie">
-  {{#each model as |movie|}}
-    <p>Title: {{movie.title}}</p>
-  {{/each}}
-
-</div>
+{{#each model as |movie|}}
+  <div {{action "toggleBody"}}class="movie">
+      <p>Title: {{movie.title}}</p>
+      <img class="poster" alt="" src="http://localhost:3000/images/posters/{{movie.poster_filename}}">
+      {{#if selected}}
+        <div class="movie-info">
+          <p>Released: {{movie.release_date}}</p>
+          <p>Overview:{{movie.overview}}</p>
+          <p>Invetory: {{movie.inventory}}</p>
+        </div>
+      {{/if}}
+  </div>
+{{/each}}
