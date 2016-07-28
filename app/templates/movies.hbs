@@ -1,3 +1,5 @@
+<button {{action "navForward"}}>Next</button>
+
 {{#each model as |movie|}}
   <div {{action "toggleSelected"}}class="movie">
       <p>Title: {{movie.title}}</p>
