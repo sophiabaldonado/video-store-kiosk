@@ -1,5 +1,5 @@
 {{#each model as |movie|}}
-  <div {{action "toggleBody"}}class="movie">
+  <div {{action "toggleSelected"}}class="movie">
       <p>Title: {{movie.title}}</p>
       <img class="poster" alt="" src="http://localhost:3000/images/posters/{{movie.poster_filename}}">
       {{#if selected}}

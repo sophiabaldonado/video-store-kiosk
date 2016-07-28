@@ -2,7 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   actions: {
-    toggleBody() {
+    toggleSelected() {
+      console.log(this)
       this.toggleProperty('selected');
     }
   }
