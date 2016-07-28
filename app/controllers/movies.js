@@ -5,16 +5,20 @@ export default Ember.Controller.extend({
   page: 1,
   actions: {
     toggleSelected () {
-      console.log("controller: ", this.page)
-
-      // console.log("boo: ", this)
       this.toggleProperty('selected');
     },
     navForward () {
-
       let nextPage = this.page + 1
       this.set('page', nextPage)
-      // model({page: nextPage})
+    },
+    navBack () {
+      let prevPage
+      if (this.page === 1) {
+        prevPage = 1
+      } else {
+        prevPage = this.page - 1
+        this.set('page', prevPage)
+      }
     }
   }
 });
