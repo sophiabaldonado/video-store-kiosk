@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  queryParams: ['page', 'size'],
   page: 1,
   actions: {
     toggleSelected () {
@@ -17,8 +16,8 @@ export default Ember.Controller.extend({
         prevPage = 1
       } else {
         prevPage = this.page - 1
-        this.set('page', prevPage)
       }
+      this.set('page', prevPage)
     }
   }
 });
