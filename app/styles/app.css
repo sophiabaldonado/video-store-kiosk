@@ -1,6 +1,7 @@
 html {
   font-size: 16px;
   font-family: 'Helvetica', 'Arial', sans-serif;
+  background: #eee;
 }
 
 * {
@@ -9,20 +10,83 @@ html {
   margin: 1rem auto;
 }
 
+header {
+  text-align: center;
+}
+
+header h1 {
+  font-size: 4rem;
+  font-family: 'Playball', cursive;
+  color: #a13a3a;
+}
+
+.container {
+  background: #1b1b1b;
+}
+
+.something {
+  width: 100%;
+  overflow: auto;
+}
+
+/** Movies **/
+
+.movies {
+  display: inline-block;
+  width: 79%;
+  margin: 1rem auto;
+  clear: both;
+  float: left;
+}
+
 .movie {
-  background: plum;
+  display: inline-block;
+  /*background: #a13a3a;*/
+  width: 24%;
+  /*float: left;*/
 }
 
 .selected {
-  background: pink;
 }
 
 .poster {
   display: inline-block;
-  width: 7%;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .movie-info {
   display: inline-block;
   width: 80%;
+  color: white;
+}
+
+button.add-to-queue {
+  background: #a13a3a;
+  opacity: .8;
+  width: 100%;
+  margin: 0;
+  padding: .3rem 0 .5rem 0;
+  border: none;
+  border-bottom: solid .5rem #d74f4f;
+  border-radius: 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #d74f4f;
+  transition: all 0.3s ease;
+}
+
+button.add-to-queue:hover {
+  cursor: pointer;
+  opacity: 1;
+  color: #fff;
+}
+
+/** Queue **/
+
+.queue {
+  display: inline-block;
+  width: 20%;
+  /*clear: both;*/
+  /*float: right;*/
 }
