@@ -2,6 +2,7 @@ html {
   font-size: 16px;
   font-family: 'Helvetica', 'Arial', sans-serif;
   background: #eee;
+  color: white;
 }
 
 * {
@@ -39,11 +40,16 @@ header h1 {
   float: left;
 }
 
+.movies .ember-view {
+  display: inline-block;
+  width: 24%;
+}
+
 .movie {
   display: inline-block;
-  /*background: #a13a3a;*/
-  width: 24%;
-  /*float: left;*/
+  width: 100%;
+  color: white;
+  transition: all 0.3s ease;
 }
 
 .selected {
@@ -87,6 +93,4 @@ button.add-to-queue:hover {
 .queue {
   display: inline-block;
   width: 20%;
-  /*clear: both;*/
-  /*float: right;*/
 }

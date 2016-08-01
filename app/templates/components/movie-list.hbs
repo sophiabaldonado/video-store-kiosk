@@ -1,0 +1,15 @@
+{{yield}}
+
+<div {{action "toggleSelected"}} class="movie">
+  <img class="poster" alt="" src="http://localhost:3000/images/posters/{{movie.poster_filename}}">
+  <button class="add-to-queue" {{action "addToQueue" movie.id}}>+</button>
+  <p>{{movie.title}} s? {{movie.selected}}</p>
+  {{#if selected}}
+    <div class="movie-info">
+      <p>Released: {{movie.release_date}}</p>
+      <p>Overview:{{movie.overview}}</p>
+      <p>Invetory: {{movie.inventory}}</p>
+      <button class="add-to-queue" {{action "addToQueue" movie.id}}>Add To Queue</button>
+    </div>
+  {{/if}}
+</div>

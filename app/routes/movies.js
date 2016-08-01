@@ -8,7 +8,8 @@ export default Ember.Route.extend({
       // console.log("halp: ", this.model)
       // return $.getJSON("http://localhost:3000/?page=" + pageNumber + "&size=10")
       return this.store.query('movie', {
-        page: params.page || 1
+        page: params.page || 1,
+        size: 8
       })
   },
   queryParams: {

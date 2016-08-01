@@ -2,17 +2,22 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   page: 1,
-  selected: null,
+  selectedMovie: 1,
   queued: [],
   actions: {
     toggleSelected (id) {
-      // console.log('beep: ', id)
-      // console.log('boop: ', this.selected)
-      this.set('selected', id)
+      // console.log('robot: ', model)
+
+      // this.store.findRecord('movie', this.selectedMovie).then(function(mov) {
+      //   mov.set('selected', false);
+      // })
+      // this.store.findRecord('movie', id).then(function(mov) {
+      //   mov.set('selected', true);
+      // })
+      this.toggleProperty('selected')
+      this.set('selectedMovie', id)
     },
     addToQueue (id) {
-      console.log('beep: ', id)
-      console.log('boop: ', this.queued)
       this.get('queued').push(id)
     },
     navForward () {
