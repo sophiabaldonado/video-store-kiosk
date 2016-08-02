@@ -30,6 +30,27 @@ header h1 {
   overflow: auto;
 }
 
+button.nav {
+  background: #a13a3a;
+  opacity: .8;
+  width: 5%;
+  margin-top: .7rem;
+  padding: .3rem 0 .5rem 0;
+  border: none;
+  border-bottom: solid .5rem #d74f4f;
+  border-radius: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #d74f4f;
+  transition: all 0.2s ease;
+}
+
+button.nav:hover {
+  cursor: pointer;
+  opacity: 1;
+  color: #fff;
+}
+
 /** Movies **/
 
 .movies {
@@ -90,7 +111,7 @@ button.add-to-queue {
   font-size: 1.6rem;
   font-weight: bold;
   color: #d74f4f;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 button.add-to-queue:hover {
