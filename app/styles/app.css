@@ -8,7 +8,7 @@ html {
 * {
   box-sizing: border-box;
   padding: 0;
-  margin: 1rem auto;
+  margin: 0 auto;
 }
 
 header {
@@ -69,6 +69,7 @@ button.nav:hover {
 .movie {
   display: inline-block;
   width: 100%;
+  margin-bottom: 0;
   color: white;
 }
 
@@ -78,7 +79,6 @@ button.nav:hover {
 .poster {
   display: inline-block;
   width: 100%;
-  margin: 0 auto;
   transition: all 0.15s ease;
 }
 
@@ -94,7 +94,12 @@ button.nav:hover {
 .movie-info {
   display: inline-block;
   width: 80%;
+  padding: .5rem;
   color: white;
+}
+
+.inventory {
+  font-weight: lighter;
 }
 
 button.add-to-queue {
@@ -103,7 +108,7 @@ button.add-to-queue {
   background: #a13a3a;
   opacity: .8;
   width: 100%;
-  margin-top: .5rem;
+  margin: .5rem auto 0 auto;
   padding: .3rem 0 .5rem 0;
   border: none;
   border-bottom: solid .5rem #d74f4f;
