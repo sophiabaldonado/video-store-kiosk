@@ -1,22 +1,30 @@
-<button {{action "navBack"}}>Previous</button>
-<button {{action "navForward"}}>Next</button>
-{{model}}
+<header>
+  <button class="nav back-button" {{action "navBack"}}>-</button>
+  <h1><a href="/movies">Kiki's Kiosk</a></h1>
+  <button class="nav next-button" {{action "navForward"}}>></button>
+</header>
 
 <div class="something">
   <div class="movies">
+    {{#if elected}}
+      {{animate-details title=selectedTitle overview=selectedOverview}}
+    {{/if}}
+
     {{#each model as |movie|}}
-      <div {{action "toggleSelected" movie.id}}class="movie">
-        <img class="poster" alt="" src="http://localhost:3000/images/posters/{{movie.poster_filename}}">
-        <button class="add-to-queue" {{action "addToQueue" movie.id}}>+</button>
-        <p>{{movie.title}}</p>
-        {{#if selected}}
-          <div class="movie-info">
-            <p>Released: {{movie.release_date}}</p>
-            <p>Overview:{{movie.overview}}</p>
-            <p>Invetory: {{movie.inventory}}</p>
-            <button class="add-to-queue" {{action "addToQueue" movie.id}}>Add To Queue</button>
+      <div class="movie">
+        <div id="movieCard" class="flip-container movie" {{action "toggleSelected" ovie.title movie.overview movie.id this}} ontouchstart="this.classList.toggle('hover');">
+          <div class="flipper">
+            <div class="front">
+              <img class="poster" alt="" src="http://localhost:3000/images/posters/{{movie.poster_filename}}">
+            </div>
+            <div class="back">
+              <!-- back content -->
+              <h3>Jaws</h3>
+              <p>Blah blah blah</p>
+            </div>
           </div>
-        {{/if}}
+        </div>
+        <button class="add-to-queue" {{action "addToQueue" movie.id}}>+</button>
       </div>
     {{/each}}
   </div>

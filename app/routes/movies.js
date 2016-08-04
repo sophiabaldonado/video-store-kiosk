@@ -2,15 +2,6 @@ import Ember from 'ember'
 // import Model from '../models/movies'
 
 export default Ember.Route.extend({
-  model(params) {
-      // let page = params.page
-      // let pageNumber = page || 1
-      // console.log("halp: ", this.model)
-      // return $.getJSON("http://localhost:3000/?page=" + pageNumber + "&size=10")
-      return this.store.query('movie', {
-        page: params.page || 1
-      })
-  },
   queryParams: {
     page: {
       refreshModel: true
@@ -18,9 +9,22 @@ export default Ember.Route.extend({
     selected: {
       refreshModel: true
     },
+    isSelected: {
+      refreshModel: true
+    },
     queued: {
       refreshModel: true
     }
+  },
+  model(params) {
+      // let page = params.page
+      // let pageNumber = page || 1
+      // console.log("halp: ", this.model)
+      // return $.getJSON("http://localhost:3000/?page=" + pageNumber + "&size=10")
+      return this.store.query('movie', {
+        page: params.page || 1,
+        size: 5
+      })
   }
 })
 //

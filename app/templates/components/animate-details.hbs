@@ -1,0 +1,7 @@
+{{yield}}
+
+<div class="movie-info">
+  <h3>{{title}}</h3>
+  <p>{{overview}}</p>
+  <button class="add-to-queue" {{action "addToQueue" movie.id}}>Add To Queue</button>
+</div>

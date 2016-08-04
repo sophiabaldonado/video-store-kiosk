@@ -1,20 +1,33 @@
 html {
   font-size: 16px;
   font-family: 'Helvetica', 'Arial', sans-serif;
-  background: #eee;
+  background: #1b1b1b;
+  color: white;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
-  margin: 1rem auto;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h3 {
+  font-size: 2rem;
 }
 
 header {
   text-align: center;
+  background: #eee;
 }
 
 header h1 {
+  display: inline-block;
+  width: 50%;
   font-size: 4rem;
   font-family: 'Playball', cursive;
   color: #a13a3a;
@@ -29,21 +42,52 @@ header h1 {
   overflow: auto;
 }
 
+button.nav {
+  display: inline-block;
+  background: #a13a3a;
+  opacity: .8;
+  width: 5%;
+  margin: .7rem 2%;
+  padding: .3rem 0 .5rem 0;
+  border: none;
+  border-bottom: solid .5rem #d74f4f;
+  border-radius: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #d74f4f;
+  transition: all 0.2s ease;
+}
+
+button.nav:hover {
+  cursor: pointer;
+  opacity: 1;
+  color: #fff;
+}
+
+.back-button {
+  float: left;
+}
+
+.next-button {
+  float: right;
+}
+
 /** Movies **/
 
 .movies {
   display: inline-block;
-  width: 79%;
+  width: 100%;
   margin: 1rem auto;
+  padding: .2rem;
   clear: both;
   float: left;
 }
 
 .movie {
   display: inline-block;
-  /*background: #a13a3a;*/
-  width: 24%;
-  /*float: left;*/
+  width: 19%;
+  margin: 0 .2%;
+  color: white;
 }
 
 .selected {
@@ -52,20 +96,46 @@ header h1 {
 .poster {
   display: inline-block;
   width: 100%;
-  margin: 0 auto;
+  transition: all 0.15s ease;
+}
+
+.poster:hover {
+  cursor: pointer;
+  /*border: solid .5rem #d74f4f;*/
+  -webkit-box-shadow: 0px 0px 17px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 17px 1px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 17px 1px rgba(0,0,0,0.75);
+  transform: scale(1.05);
 }
 
 .movie-info {
   display: inline-block;
-  width: 80%;
+  width: 70%;
+  margin: 0 15%;
+  padding: 2rem;
+  height: 15rem;
+  padding: .5rem;
   color: white;
+  /*display: none;*/
+}
+
+.movie-info p {
+  margin: 1rem auto;
+  font-weight: lighter;
+}
+
+.inventory {
+  font-weight: lighter;
 }
 
 button.add-to-queue {
+  /*position: absolute;
+  bottom: 0;*/
   background: #a13a3a;
   opacity: .8;
   width: 100%;
-  margin: 0;
+  max-width: 18rem;
+  margin: .5rem auto 0 auto;
   padding: .3rem 0 .5rem 0;
   border: none;
   border-bottom: solid .5rem #d74f4f;
@@ -73,7 +143,7 @@ button.add-to-queue {
   font-size: 1.6rem;
   font-weight: bold;
   color: #d74f4f;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 button.add-to-queue:hover {
@@ -87,6 +157,51 @@ button.add-to-queue:hover {
 .queue {
   display: inline-block;
   width: 20%;
-  /*clear: both;*/
-  /*float: right;*/
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+}
+	/* flip the pane when hovered */
+	/*.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}*/
+
+.flip-container, .front, .back {
+	width: 320px;
+	height: 480px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.4s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+
+.flip-container.flip .flipper {
+	transform: rotateY(180deg);
 }
