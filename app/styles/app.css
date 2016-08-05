@@ -1,7 +1,7 @@
 html {
   font-size: 16px;
   font-family: 'Helvetica', 'Arial', sans-serif;
-  background: #eee;
+  background: #1b1b1b;
   color: white;
 }
 
@@ -11,14 +11,20 @@ html {
   margin: 0 auto;
 }
 
+h1, h2 {
+  font-family: 'Playball', cursive;
+  color: #a13a3a;
+}
+
 header {
+  padding: 0 .7rem;
   text-align: center;
+  background: #eee;
 }
 
 header h1 {
+  display: inline-block;
   font-size: 4rem;
-  font-family: 'Playball', cursive;
-  color: #a13a3a;
 }
 
 .container {
@@ -30,11 +36,20 @@ header h1 {
   overflow: auto;
 }
 
+button.nav.left {
+  float: left;
+}
+
+button.nav.right {
+  float: right;
+}
+
 button.nav {
+  display: inline-block;
   background: #a13a3a;
   opacity: .8;
   width: 5%;
-  margin-top: .7rem;
+  margin-top: .5rem;
   padding: .3rem 0 .5rem 0;
   border: none;
   border-bottom: solid .5rem #d74f4f;
@@ -43,6 +58,7 @@ button.nav {
   font-weight: bold;
   color: #d74f4f;
   transition: all 0.2s ease;
+  line-height: 2.5rem;
 }
 
 button.nav:hover {
@@ -55,7 +71,7 @@ button.nav:hover {
 
 .movies {
   display: inline-block;
-  width: 79%;
+  width: 85%;
   margin: 1rem auto;
   clear: both;
   float: left;
@@ -72,8 +88,18 @@ button.nav:hover {
   margin-bottom: 0;
   color: white;
 }
+.movie-info {
+  display: inline-block;
+  width: 80%;
+  padding: .5rem;
+  color: white;
+  /*opacity:0;*/
+ -webkit-transition: opacity .25s ease;
+ -moz-transition: opacity .25s ease;
+}
 
-.selected {
+#selected .movie-info {
+  opacity:1;
 }
 
 .poster {
@@ -91,13 +117,6 @@ button.nav:hover {
   transform: scale(1.05);
 }
 
-.movie-info {
-  display: inline-block;
-  width: 80%;
-  padding: .5rem;
-  color: white;
-}
-
 .inventory {
   font-weight: lighter;
 }
@@ -108,7 +127,7 @@ button.add-to-queue {
   background: #a13a3a;
   opacity: .8;
   width: 100%;
-  margin: .5rem auto 0 auto;
+  margin: .5rem auto 2rem auto;
   padding: .3rem 0 .5rem 0;
   border: none;
   border-bottom: solid .5rem #d74f4f;
@@ -129,5 +148,33 @@ button.add-to-queue:hover {
 
 .queue {
   display: inline-block;
-  width: 20%;
+  width: 15%;
+}
+
+.queue h2 {
+  display: inline;
+  font-size: 2rem;
+}
+
+.queued {
+  margin: 1rem auto;
+}
+
+.queued-poster {
+  display: inline-block;
+  width: 50%;
+}
+
+button.remove-button {
+  display: inline-block;
+  width: 30%;
+  margin: 1rem;
+  float: right;
+}
+
+button.clear-queue {
+  display: inline;
+  width: 30%;
+  height: 3.2rem;
+  font-size: 1rem;
 }

@@ -17,8 +17,14 @@ export default Ember.Controller.extend({
       this.toggleProperty('selected')
       this.set('selectedMovie', id)
     },
-    addToQueue (id) {
-      this.get('queued').push(id)
+    addToQueue (movie) {
+      this.get('queued').pushObject(movie)
+    },
+    removeFromQueue (movie) {
+      this.get('queued').removeObject(movie)
+    },
+    clearQueue () {
+      this.set('queued', [])
     },
     navForward () {
       let nextPage = this.page + 1

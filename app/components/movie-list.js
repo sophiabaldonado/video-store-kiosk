@@ -5,6 +5,10 @@ export default Ember.Component.extend({
   actions: {
     toggleSelected (){
       this.toggleProperty('selected')
+    },
+    add (movie) {
+      console.log("bip")
+      this.sendAction('add', movie)
     }
   }
 });

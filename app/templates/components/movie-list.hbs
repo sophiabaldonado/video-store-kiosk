@@ -6,12 +6,12 @@
   <p class="release-date">{{date-formatter movie.release_date}}</p>
   <p class="inventory">{{movie.inventory}} in stock</p>
   <p>{{movie.overview}}</p>
-  <button class="add-to-queue" {{action "addToQueue" movie.id}}>Add To Queue</button>
+  <button class="add-to-queue" {{action "add" movie}}>Add To Queue</button>
 </div>
 {{/if}}
 <div class="movie">
   <img {{action "toggleSelected"}} class="poster" alt="" src="http://localhost:3000/images/posters/{{movie.poster_filename}}">
-  <button class="add-to-queue" {{action "addToQueue" movie.id}}>+</button>
+  <button class="add-to-queue" {{action "add" movie}}>+</button>
 </div>
 
 {{!-- I want to make the add to queue button a small square with a plus that is off to one side, when you

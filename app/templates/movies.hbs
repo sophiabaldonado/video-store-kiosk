@@ -1,15 +1,25 @@
-<button class="nav" {{action "navBack"}}>-</button>
-<button class="nav" {{action "navForward"}}>></button>
+<header>
+  <button class="nav left" {{action "navBack"}}>◀︎</button>
+  <h1>Kiki's Kiosk</h1>
+  <button class="nav right" {{action "navForward"}}>▶︎</button>
+</header>
 
 <div class="something">
   <div class="movies">
     {{#each model as |movie|}}
-      {{movie-list movie=movie}}
+      {{movie-list movie=movie add=(action 'addToQueue')}}
     {{/each}}
   </div>
 
   <div class="queue">
-    <p>queue</p>
-    {{queue-queue queuedMovies=model}}
+    <h2>Queue </h2>
+    {{!-- {{queue-queue queuedMovies=model}} --}}
+    <button href="#" class="nav clear-queue" {{action 'clearQueue'}}>clear</button>
+    {{#each queued as |movie|}}
+      <div class="queued">
+        <img class="queued-poster" alt="" src="http://localhost:3000/images/posters/{{movie.poster_filename}}">
+        <button class="nav remove-button" {{action 'removeFromQueue' movie}}>X</button>
+    </div>
+    {{/each}}
   </div>
 </div>
